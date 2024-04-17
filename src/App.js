@@ -3,6 +3,7 @@ import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Body from "./Componants/Body";
 import Homepage from "./Componants/Homepage";
+import BusList from "./Componants/BusList";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -13,6 +14,10 @@ function App() {
         {
           path: "/",
           element: <Homepage />,
+        },
+        {
+          path: "/BusList/:from/:to",
+          element: <BusList />,
         },
       ],
     },

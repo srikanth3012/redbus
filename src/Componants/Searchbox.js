@@ -6,7 +6,7 @@ const SearchBox = () => {
   const to = useRef();
   const navigate = useNavigate();
   const navigatehandler = () => {
-    navigate(`/Bus/List/${from?.current?.value}/${to?.current?.value}`);
+    navigate(`/BusList/${from?.current?.value}/${to?.current?.value}`);
   };
   return (
     <div className="w-[80%] h-40 pt-12 relative top-32 left-[15%] flex flex-col gap-8 ">

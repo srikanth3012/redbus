@@ -1,0 +1,390 @@
+[
+  {
+    "id": "1",
+    "travelName": "VSR Tours and Travels",
+    "busType": "AC",
+    "startTime": "22:10",
+    "reachTime": "08:10",
+    "startlocation": "GachiBowli",
+    "dropLocation": "Marathalli",
+    "seatType": "Sleeper",
+    "Price": "1000",
+    "seats": "30",
+    "duration": "10h:20M",
+    "pickU_stages": [
+      {
+        "location": "Gachibowli",
+        "time": "22:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hi-Tech City",
+        "time": "22:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Lingampally",
+        "time": "22:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "DLF Building",
+        "time": "23:00",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Madhapur",
+        "time": "23:10",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Raidurg",
+        "time": "23:20",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hafizpet",
+        "time": "23:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Kondapur",
+        "time": "23:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "AmeerPet",
+        "time": "23:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      }
+    ],
+    "drop_stages": [
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Marathahali"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Electronic City"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Majestic"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Silk Board"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Maha Devapuram"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Yelahanka"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Kalasipalyam"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "travelName": "Jabbar Travels",
+    "busType": "AC",
+    "startTime": "22:20",
+    "reachTime": "08:20",
+    "startlocation": "lakdikapul",
+    "dropLocation": "Marathalli",
+    "seatType": "Sleeper",
+    "Price": "1000",
+    "seats": "30",
+    "duration": "10h:30M",
+    "pickU_stages": [
+      {
+        "location": "Gachibowli",
+        "time": "22:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hi-Tech City",
+        "time": "22:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Lingampally",
+        "time": "22:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "DLF Building",
+        "time": "23:00",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Madhapur",
+        "time": "23:10",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Raidurg",
+        "time": "23:20",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hafizpet",
+        "time": "23:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Kondapur",
+        "time": "23:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "AmeerPet",
+        "time": "23:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      }
+    ],
+    "drop_stages": [
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Marathahali"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Electronic City"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Majestic"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Silk Board"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Maha Devapuram"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Yelahanka"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Kalasipalyam"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "travelName": "Intercity travels",
+    "busType": "AC",
+    "startTime": "22:30",
+    "reachTime": "08:30",
+    "startlocation": "kukatapally",
+    "dropLocation": "Marathalli",
+    "seatType": "SemiSleeper",
+    "Price": "500",
+    "seats": "50",
+    "duration": "10h:40M",
+    "pickU_stages": [
+      {
+        "location": "Gachibowli",
+        "time": "22:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hi-Tech City",
+        "time": "22:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Lingampally",
+        "time": "22:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "DLF Building",
+        "time": "23:00",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Madhapur",
+        "time": "23:10",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Raidurg",
+        "time": "23:20",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hafizpet",
+        "time": "23:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Kondapur",
+        "time": "23:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "AmeerPet",
+        "time": "23:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      }
+    ],
+    "drop_stages": [
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Marathahali"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Electronic City"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Majestic"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Silk Board"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Maha Devapuram"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Yelahanka"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Kalasipalyam"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "travelName": "KSM Roadways",
+    "busType": "AC",
+    "startTime": "22:40",
+    "reachTime": "08:40",
+    "startlocation": "LB nagar",
+    "dropLocation": "Marathalli",
+    "seatType": "SemiSleeper",
+    "Price": "500",
+    "seats": "50",
+    "duration": "10h:50M",
+    "pickU_stages": [
+      {
+        "location": "Gachibowli",
+        "time": "22:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hi-Tech City",
+        "time": "22:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Lingampally",
+        "time": "22:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "DLF Building",
+        "time": "23:00",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Madhapur",
+        "time": "23:10",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Raidurg",
+        "time": "23:20",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Hafizpet",
+        "time": "23:30",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "Kondapur",
+        "time": "23:40",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      },
+      {
+        "location": "AmeerPet",
+        "time": "23:50",
+        "nearbt": "opp Raja Rani Ruchula Restaurant,metro"
+      }
+    ],
+    "drop_stages": [
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Marathahali"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Electronic City"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Majestic"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Silk Board"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Maha Devapuram"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Yelahanka"
+      },
+      {
+        "nearby": "opp Raja Rani Ruchula Restaruant,metro",
+        "time": "07:10",
+        "location": "Kalasipalyam"
+      }
+    ]
+  }
+]
