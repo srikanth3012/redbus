@@ -15,15 +15,14 @@ const BusList = () => {
 
   return (
     <>
-      <div className="text-xs  bg-gradient-to-b from-orange-100 to-white pl-10 py-5 sticky top-0"></div>
-      <div className="text-xs absolute top-[105px] pl-5">
+      <div className="text-xs  bg-gradient-to-b from-orange-100 to-white pl-10 py-3 ">
         Home<span>{">"}</span>Bus Ticket <span>{">"}</span>
         {from.toUpperCase()} to {to.toUpperCase()}
       </div>
-      <div className="pl-10 py-1 text-lg border border-b relative">
+      <div className="pl-10  text-lg  border-b-2 relative">
         {from.toUpperCase()} to {to.toUpperCase()}
       </div>
-      <div className="pl-10 p-2 sticky top-1 text-lg font-semibold  w-screen ">
+      <div className="pl-10 p-2 h-16 sticky top-0 text-lg font-semibold border-b-2 w-screen bg-white ">
         {from.toUpperCase()} to {to.toUpperCase()}
         <button
           className="border border-black px-3 py-1 ml-2 text-xs bg-orange-100 rounded-sm"
