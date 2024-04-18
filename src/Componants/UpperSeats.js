@@ -1,7 +1,7 @@
 import React from "react";
 import SeatsCard from "./SeatsCard";
 
-const UpperSeats = ({ setBusSeats, busSeats }) => {
+const UpperSeats = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7];
 
   return (
@@ -11,12 +11,7 @@ const UpperSeats = ({ setBusSeats, busSeats }) => {
       </h1>
       <div className="m-5 w-[65%] ml-[16%]">
         {arr.map((item) => (
-          <SeatsCard
-            item={"U" + item}
-            key={item}
-            setBusSeats={setBusSeats}
-            busSeats={busSeats}
-          />
+          <SeatsCard item={"U" + item} key={item} />
         ))}
       </div>
     </div>

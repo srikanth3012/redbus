@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import BusSeats from "./BusSeats";
 import DropandPickupPoint from "./DropandPickupPoint";
 import Payment from "./Payment";
+import { useSelector } from "react-redux";
 
 const BusInfo = ({ id }) => {
-  const [seatsArr, setSeatsArr] = useState([]);
-  const busSeats = [];
   const [boardingPoint, setBoardingPoint] = useState("");
   const [dropPoint, setdropPoint] = useState("");
   const [PaymentToggle, setPaymentToggle] = useState(false);
-  useEffect(() => setSeatsArr([busSeats]), [busSeats.length]);
+  const Seats = useSelector((store) => store?.BusSeats?.Seats);
   return (
     <div className="flex flex-row w-[88%] bg-gray-100 ml-16">
       <div>
-        <BusSeats busSeats={busSeats} />
+        <BusSeats />
       </div>
-      {!PaymentToggle && seatsArr.length && (
+      {!PaymentToggle && Seats.length && (
         <div>
           <DropandPickupPoint
             id={id}
@@ -27,11 +26,7 @@ const BusInfo = ({ id }) => {
         </div>
       )}
       {PaymentToggle && (
-        <Payment
-          boardingPoint={boardingPoint}
-          dropPoint={dropPoint}
-          busSeats={busSeats}
-        />
+        <Payment boardingPoint={boardingPoint} dropPoint={dropPoint} />
       )}
     </div>
   );

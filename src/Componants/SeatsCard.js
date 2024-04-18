@@ -1,33 +1,37 @@
 import React, { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { addSeats, delSeats } from "../../uttils/BusSeatSlicer";
+import { useDispatch, useSelector } from "react-redux";
+import { addSeats, delSeats } from "../Utills/BusSeatSlicer";
 
-const SeatsCard = ({ item, busSeats }) => {
+const SeatsCard = ({ item }) => {
   const [seat1, setSeat1] = useState("transparent");
   const [seat2, setSeat2] = useState("transparent");
   const [seat3, setSeat3] = useState("transparent");
+  const dispatch = useDispatch();
   const seat1Handler = (item) => {
     if (seat1 === "transparent") {
-      busSeats.push(item);
+      dispatch(addSeats(item));
       setSeat1("gray-300");
     } else {
       setSeat1("transparent");
+      dispatch(delSeats(item));
     }
   };
   const seat2Handler = (item) => {
     if (seat2 === "transparent") {
       setSeat2("gray-300");
-      busSeats.push(item);
+      dispatch(addSeats(item));
     } else {
       setSeat2("transparent");
+      dispatch(delSeats(item));
     }
   };
   const seat3Handler = (item) => {
     if (seat3 === "transparent") {
       setSeat3("gray-300");
-      busSeats.push(item);
+      dispatch(addSeats(item));
     } else {
       setSeat3("transparent");
+      dispatch(delSeats(item));
     }
   };
   return (

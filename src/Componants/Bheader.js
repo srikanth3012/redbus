@@ -16,14 +16,18 @@ const Bheader = () => {
             />
           </div>
           <div className="flex gap-4">
-            <div className="bg-gray-300 p-3 rounded-md px-2 py-2">
-              <img
-                alt="buslogo"
-                src="https://st.redbus.in/web/images/layout/rb_vertical.svg"
-                className="w-16 h-8"
-              />
-              <h1 className="text-red-800">Bus Ticket</h1>
+            <div className="flex flex-col">
+              <div className=" bg-gray-300 p-3 rounded-md px-2 py-1 ">
+                <img
+                  alt="buslogo"
+                  src="https://st.redbus.in/web/images/layout/rb_vertical.svg"
+                  className="w-16 h-8"
+                />
+                <h1 className="text-red-800">Bus Ticket</h1>
+              </div>
+              <span className="w-full mt-[1px]  border-b-4 border-red-900"></span>
             </div>
+
             <div className="bg-gray-300 p-3 rounded-md px-2 py-2">
               <img
                 alt="buslogo"

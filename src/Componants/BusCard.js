@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import BusInfo from "./BusInfo";
+import { emptySeats } from "../Utills/BusSeatSlicer";
+import { useDispatch } from "react-redux";
 
 const BusCard = ({ item }) => {
   const [busSeats, setBusSeats] = useState(false);
+  const dispatch = useDispatch();
   const navigateHandler = (id) => {
     setBusSeats(!busSeats);
-    //   dispatch(emptySeats());
+    dispatch(emptySeats());
   };
   return (
     <>
