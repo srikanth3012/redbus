@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import BusSeats from "./BusSeats";
+import BusInfo from "./BusInfo";
 
 const BusCard = ({ item }) => {
   const [busSeats, setBusSeats] = useState(false);
-
   const navigateHandler = (id) => {
     setBusSeats(!busSeats);
     //   dispatch(emptySeats());
@@ -91,7 +90,7 @@ const BusCard = ({ item }) => {
       </div>
       {busSeats && (
         <div>
-          <BusSeats />
+          <BusInfo id={item?.id} />
         </div>
       )}
     </>

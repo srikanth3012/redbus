@@ -5,7 +5,7 @@ const LowerSeats = () => {
   const arr = [1, 2, 3, 4, 5, 6];
 
   return (
-    <div className="w-[20%] h-[30em] bg-white rotate-90 -mt-52  ">
+    <div className="w-[18%] h-[35em] bg-white rotate-90 -mt-52  ">
       <h1 className="py-1 text-lg text-white font-semibold text-center bg-gray-700">
         Lower Seats
       </h1>
