@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BusData from "./Busdata.json";
 
 const DropandPickupPoint = ({
@@ -8,11 +8,15 @@ const DropandPickupPoint = ({
   setdropPoint,
   boardingPoint,
 }) => {
+  const [bgBoarding, setBgBoarding] = useState("border-b-4 border-gray-700");
+  const [bgDrop, setBgDrop] = useState("transparent");
   const busDetails = BusData.filter((ele) => ele?.id === id);
   const PickUpStages = busDetails[0]?.pickU_stages;
   const DropStages = busDetails[0]?.drop_stages;
   const locationHandler = (item) => {
     if (!boardingPoint) {
+      setBgBoarding("");
+      setBgDrop("border-b-4 border-gray-700");
       setBoardingPoint(item);
     } else {
       setdropPoint(item);
@@ -23,8 +27,12 @@ const DropandPickupPoint = ({
     <>
       <div className=" border border-gray-300 w-[100%] h-[27em] ml-[45%]  mt-16">
         <div className="flex text-center pl-10 border border-b-gray-300">
-          <h1 className="text-lg font-semibold  px-2 py-2 ">BOARDING POINT</h1>
-          <h1 className="text-lg font-semibold  px-2 py-2 ">DROPPING POINT</h1>
+          <h1 className={`text-lg font-semibold  px-2 py-2 ${bgBoarding}`}>
+            BOARDING POINT
+          </h1>
+          <h1 className={`text-lg font-semibold  px-2 py-2 ${bgDrop} `}>
+            DROPPING POINT
+          </h1>
         </div>
         <div className="h-[24em] w-full overflow-x-scroll pl-5">
           {!boardingPoint &&

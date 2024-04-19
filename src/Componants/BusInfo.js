@@ -26,7 +26,7 @@ const BusInfo = ({ id }) => {
         </div>
       )}
       {PaymentToggle && (
-        <Payment boardingPoint={boardingPoint} dropPoint={dropPoint} />
+        <Payment boardingPoint={boardingPoint} dropPoint={dropPoint} id={id} />
       )}
     </div>
   );

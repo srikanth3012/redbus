@@ -5,7 +5,7 @@ const busCheckOutSlicer = createSlice({
   initialState: { CheckOut: [] },
   reducers: {
     addDetails(state, { payload }) {
-      state.CheckOut.push(payload);
+      state.CheckOut.unshift(payload);
     },
   },
 });

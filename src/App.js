@@ -6,6 +6,7 @@ import Homepage from "./Componants/Homepage";
 import BusList from "./Componants/BusList";
 import { Provider } from "react-redux";
 import store from "./Utills/store";
+import CheckOut from "./Componants/CheckOut";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -20,6 +21,14 @@ function App() {
         {
           path: "/BusList/:from/:to",
           element: <BusList />,
+        },
+        {
+          path: "/BusList/checkout",
+          element: <CheckOut />,
+        },
+        {
+          path: "/BusList/checkout/:id",
+          element: <CheckOut />,
         },
       ],
     },

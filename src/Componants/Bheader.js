@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import Orders from "./Orders";
+import MyTickets from "./MyTickets";
 
 const Bheader = () => {
   const [orders, SetOrders] = useState(false);
@@ -39,7 +39,7 @@ const Bheader = () => {
           </div>
         </div>
         <div className="flex gap-2 mr-10 m-2 mt-5">
-          <Link to="/Bus">
+          <Link to="/">
             <button className=" font-bold mt-1.5">Home</button>
           </Link>
           <button onClick={() => SetOrders(!orders)} className="  font-bold">
@@ -51,11 +51,11 @@ const Bheader = () => {
           <button className="  font-bold">LogIn</button>
         </div>
       </div>
-      {/* {orders && (
+      {orders && (
         <div className="w-[50em] h-[30em] bg-slate-100 fixed right-5 top-24 z-10 overflow-x-scroll">
-          <Orders />
+          <MyTickets SetOrders={SetOrders} />
         </div>
-      )} */}
+      )}
     </>
   );
 };
