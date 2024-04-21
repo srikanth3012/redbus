@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addDetails } from "../Utills/BusCheckOutSlicer";
+import { addDetails, confirmedSeats } from "../Utills/BusCheckOutSlicer";
 import BusData from "./Busdata.json";
+import Form from "./Form";
+import { handleFormToggle } from "../Utills/FormToggleSlicer";
 
 const Payment = ({ boardingPoint, dropPoint, id }) => {
+  const [bookTicket, setBookTicket] = useState(false);
   const BusSeats = useSelector((store) => store?.BusSeats?.Seats);
   const length = BusSeats.length;
   const price = length * 1500;
@@ -13,18 +16,22 @@ const Payment = ({ boardingPoint, dropPoint, id }) => {
   const orders = useSelector((store) => store?.BusCheckOut?.CheckOut);
   const seats = useSelector((store) => store?.BusSeats?.Seats);
   const busDetails = BusData.filter((item) => item.id === id);
+  const formToggle = useSelector((store) => store?.FormToggle?.formToggle);
   const navigateHandler = () => {
     dispatch(
       addDetails({
         id: orders.length + 1,
         busName: busDetails[0]?.travelName,
         seatType: busDetails[0]?.seatType,
-        seats: [...seats],
+        seats: seats,
         boardingPoint: boardingPoint,
         dropPoint: dropPoint,
       })
     );
-    navigate("/BusList/checkout");
+    dispatch(confirmedSeats(...seats));
+    dispatch(handleFormToggle());
+    // navigate("/BusList/checkout");
+    setBookTicket(true);
   };
   return (
     <div className=" bg-gray-200 shadow-2xl w-96 pl-3 pt-10 mt-16 ml-[20%] h-[29em] ">

@@ -1,8 +1,10 @@
 import React from "react";
 import SeatsCard from "./SeatsCard";
+import { useSelector } from "react-redux";
 
-const LowerSeats = () => {
+const LowerSeats = ({ busName }) => {
   const arr = [1, 2, 3, 4, 5, 6];
+  let count = 0;
 
   return (
     <div className="w-[18%] h-[35em] bg-white rotate-90 -mt-52  ">
@@ -10,9 +12,12 @@ const LowerSeats = () => {
         Lower Seats
       </h1>
       <div className="m-5 w-[65%] ml-[16%]">
-        {arr.map((item) => (
-          <SeatsCard item={"L" + item} key={item} />
-        ))}
+        {arr.map((item) => {
+          count = count + 3;
+          return (
+            <SeatsCard item={busName + "-" + "L"} count={count} key={item} />
+          );
+        })}
         <hr />
         <img
           alt="stering"

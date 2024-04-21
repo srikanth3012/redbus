@@ -26,7 +26,7 @@ const BusList = () => {
         </div>
       </div>
 
-      <div className="pl-10 p-2 h-16 sticky top-0 text-lg font-semibold border-b-2 w-screen bg-white ">
+      <div className="pl-10 p-2 pt-4 h-16 sticky top-0 text-lg font-semibold border-b-2 w-screen bg-white ">
         {from.toUpperCase()} to {to.toUpperCase()}
         <button
           className="border border-black px-3 py-1 ml-2 text-xs bg-orange-100 rounded-sm"

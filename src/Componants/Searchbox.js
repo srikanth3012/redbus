@@ -12,7 +12,7 @@ const SearchBox = () => {
     <div className="w-[80%] h-40 pt-12 relative top-32 left-[15%] flex flex-col gap-8 ">
       <div>
         <h1 className="text-4xl text-white pl-[10%]">
-          India's No.1 Onlinie Bus Ticket Booking Site
+          India's No.1 Online Bus Ticket Booking Site
         </h1>
       </div>
       <div>

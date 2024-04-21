@@ -1,8 +1,9 @@
 import React from "react";
 import SeatsCard from "./SeatsCard";
 
-const UpperSeats = () => {
+const UpperSeats = ({ busName }) => {
   const arr = [1, 2, 3, 4, 5, 6, 7];
+  let count = 0;
 
   return (
     <div className="w-[18%] h-[35em] bg-white rotate-90  ">
@@ -10,9 +11,12 @@ const UpperSeats = () => {
         Upper Seats
       </h1>
       <div className="m-5 w-[65%] ml-[16%]">
-        {arr.map((item) => (
-          <SeatsCard item={"U" + item} key={item} />
-        ))}
+        {arr.map((item) => {
+          count = count + 3;
+          return (
+            <SeatsCard item={busName + "-" + "U"} count={count} key={item} />
+          );
+        })}
       </div>
     </div>
   );
