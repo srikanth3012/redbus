@@ -1,37 +1,15 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { addDetails, confirmedSeats } from "../Utills/BusCheckOutSlicer";
-import BusData from "./Busdata.json";
-import Form from "./Form";
+import React from "react";
+import { useDispatch } from "react-redux";
+
 import { handleFormToggle } from "../Utills/FormToggleSlicer";
 
-const Payment = ({ boardingPoint, dropPoint, id }) => {
-  const [bookTicket, setBookTicket] = useState(false);
-  const BusSeats = useSelector((store) => store?.BusSeats?.Seats);
-  const length = BusSeats.length;
+const Payment = ({ boardingPoint, dropPoint, busSeats }) => {
+  const length = busSeats.length;
   const price = length * 1500;
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const orders = useSelector((store) => store?.BusCheckOut?.CheckOut);
-  const seats = useSelector((store) => store?.BusSeats?.Seats);
-  const busDetails = BusData.filter((item) => item.id === id);
-  const formToggle = useSelector((store) => store?.FormToggle?.formToggle);
+
   const navigateHandler = () => {
-    dispatch(
-      addDetails({
-        id: orders.length + 1,
-        busName: busDetails[0]?.travelName,
-        seatType: busDetails[0]?.seatType,
-        seats: seats,
-        boardingPoint: boardingPoint,
-        dropPoint: dropPoint,
-      })
-    );
-    dispatch(confirmedSeats(...seats));
     dispatch(handleFormToggle());
-    // navigate("/BusList/checkout");
-    setBookTicket(true);
   };
   return (
     <div className=" bg-gray-200 shadow-2xl w-96 pl-3 pt-10 mt-16 ml-[20%] h-[29em] ">
@@ -54,7 +32,7 @@ const Payment = ({ boardingPoint, dropPoint, id }) => {
       <div className="flex justify-between px-5 py-4">
         <h1 className="text-lg font-semibold">Seat No.</h1>
         <h1 className="list-none flex gap-1">
-          {BusSeats.map((item) => (
+          {busSeats.map((item) => (
             <li keey={item}>{item}</li>
           ))}
         </h1>

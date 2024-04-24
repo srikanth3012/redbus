@@ -52,7 +52,7 @@ const Bheader = () => {
         </div>
       </div>
       {orders && (
-        <div className="w-[50em] h-[30em] bg-slate-100 fixed right-5 top-24 z-10 overflow-x-scroll">
+        <div className="w-[50em] h-[30em] bg-slate-100 fixed right-5 top-24 z-20 overflow-x-scroll">
           <MyTickets SetOrders={SetOrders} />
         </div>
       )}

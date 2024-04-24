@@ -1,15 +1,32 @@
 import React, { useState } from "react";
 import BusInfo from "./BusInfo";
 import { emptySeats } from "../Utills/BusSeatSlicer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const BusCard = ({ item }) => {
   const [busSeats, setBusSeats] = useState(false);
   const dispatch = useDispatch();
-  const navigateHandler = (id) => {
+  const busName = (item?.travelName).split(" ");
+  const { from } = useParams();
+  const { to } = useParams();
+  const keyItem = busName[0] + from[0] + to[0];
+  const confirmSeats = useSelector(
+    (store) => store?.BusCheckOut?.confirmeSeats
+  );
+  const Slength =
+    confirmSeats &&
+    confirmSeats.filter((ele) => {
+      const name = ele?.seats[0].split("-");
+      if (name[0] == keyItem) {
+        return item;
+      }
+    });
+  const navigateHandler = () => {
     setBusSeats(!busSeats);
     dispatch(emptySeats());
   };
+  const seats = item?.seats - Slength.length;
   return (
     <>
       <div className="flex flex-col w-[90%] ml-[5%]  m-2 border border-gray-200">
@@ -47,7 +64,7 @@ const BusCard = ({ item }) => {
               </h1>
             </div>
             <h1 className="text-xs text-gray-500 mt-10">
-              Available Seats : {item.seats}
+              Available Seats :{seats}
             </h1>
           </div>
         </div>

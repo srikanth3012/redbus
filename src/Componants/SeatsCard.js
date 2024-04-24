@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Seat from "./Seat";
 import { useSelector } from "react-redux";
 
@@ -12,13 +12,17 @@ const SeatsCard = ({ item, count }) => {
   const confirmSeats = useSelector(
     (store) => store?.BusCheckOut?.confirmeSeats
   );
+
   confirmSeats?.map((ele) => {
-    if (ele === item + seats1) {
-      bg1 = "gray-400";
-    } else if (ele === item + seats2) {
-      bg2 = "gray-400";
-    } else if (ele === item + seats3) {
-      bg3 = "gray-400";
+    if (ele?.seats == item + seats1) {
+      if (ele?.gender == "Male") bg1 = "gray-400";
+      else bg1 = "pink-400";
+    } else if (ele?.seats == item + seats2) {
+      if (ele?.gender == "Male") bg2 = "gray-400";
+      else bg2 = "pink-400";
+    } else if (ele?.seats == item + seats3) {
+      if (ele?.gender == "Male") bg3 = "gray-400";
+      else bg3 = "pink-400";
     }
   });
 

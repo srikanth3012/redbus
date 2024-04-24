@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
-    <div className="font-serif">
+    <div className="font-sans">
       <Bheader />
       <Suspense>
         <Outlet />

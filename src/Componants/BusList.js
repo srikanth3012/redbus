@@ -9,13 +9,14 @@ const BusList = () => {
   const navigate = useNavigate();
   const { from } = useParams();
   const { to } = useParams();
+
   const navigateHandler = () => {
     navigate("/Bus");
   };
 
   return (
     <>
-      <div className="flex flex-col gap-2 pt-2 text-xs  bg-gradient-to-b from-orange-50 to-white  h-16">
+      <div className="flex flex-col gap-2 pt-2 text-xs  bg-gradient-to-b from-[#F7F2F1] to-white  h-16">
         <div className="pl-10">
           {" "}
           Home<span>{">"}</span>Bus Ticket <span>{">"}</span>
@@ -26,7 +27,7 @@ const BusList = () => {
         </div>
       </div>
 
-      <div className="pl-10 p-2 pt-4 h-16 sticky top-0 text-lg font-semibold border-b-2 w-screen bg-white ">
+      <div className="pl-10 p-2 pt-4 h-16 sticky z-10 top-0 text-lg font-semibold border-b-2 w-screen bg-white ">
         {from.toUpperCase()} to {to.toUpperCase()}
         <button
           className="border border-black px-3 py-1 ml-2 text-xs bg-orange-100 rounded-sm"

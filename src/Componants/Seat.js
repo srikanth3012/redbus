@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addSeats, delSeats } from "../Utills/BusSeatSlicer";
 
 const Seat = ({ item, bg }) => {
@@ -26,6 +26,7 @@ const Seat = ({ item, bg }) => {
       >
         <span className="w-2.5 h-1.5 ml-[18%] text-xs  border border-gray-500 rounded-sm"></span>
       </button>
+      {/* {seat1} */}
     </>
   );
 };

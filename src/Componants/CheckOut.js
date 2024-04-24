@@ -10,19 +10,38 @@ const CheckOut = () => {
   const drop = details[0]?.dropPoint;
 
   return (
-    <div className="ml-[30%] w-[40em] bg-gray-300 h-[25em] px-5 py-5 mt-5 shadow-2xl">
+    <div className="ml-[30%] w-[40em] bg-gray-300 h-[25em] px-10 py-10 mt-5 shadow-2xl border">
       <h1 className="text-2xl ml-[5%] ">
         THANK YOU FOR CHOOSING <span className="text-red-700">RED BUS</span>
       </h1>
-      <h1 className="text-xl ml-[30%] mt-10">Your Journey Details</h1>
+      <h1 className="text-xl ml-[30%] mt-7">Your Journey Details</h1>
       <div className="flex gap-5 ml-[9%] mt-5">
+        <h1>
+          Name:<span className="ml-1">{details[0]?.username}</span>
+        </h1>
+        <h1 className="ml-[5%]">
+          Gender:<span className="ml-1">{details[0]?.gender}</span>
+        </h1>
+        <h1 className="ml-[5%]">
+          Age:<span className="ml-1">{details[0]?.age}</span>
+        </h1>
+      </div>
+      <div className="flex gap-5 ml-[4%] mt-2">
+        <h1 className="ml-[5%]">
+          Mail:<span>{details[0]?.email}</span>
+        </h1>
+        <h1 className="ml-[5%]">
+          Phone:<span>{details[0]?.phone}</span>
+        </h1>
+      </div>
+      <div className="flex gap-5 ml-[9%] mt-2">
         <div className="flex">
-          <h1 className="text-lg w-60 ">
+          <h1 className="text-lg w-60">
             {details[0]?.busName}
             <span className="text-sm ml-1">{details[0]?.seatType}</span>
           </h1>
         </div>
-        <h1 className="list-none flex gap-2  ml-[4%]">
+        <h1 className="list-none flex gap-2 ml-[4%]">
           seat :
           {details[0].seats.map((ele) => (
             <li key={ele}>{ele}</li>

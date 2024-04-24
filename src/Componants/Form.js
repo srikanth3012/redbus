@@ -1,79 +1,130 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { handleFormToggle } from "../Utills/FormToggleSlicer";
+import { useNavigate } from "react-router-dom";
+import { addDetails, confirmedSeats } from "../Utills/BusCheckOutSlicer";
+import PassengerInfo from "./PassengerInfo";
 
-const Form = () => {
+const Form = ({
+  boardingPoint,
+  dropPoint,
+  busDetails,
+  busSeats,
+  setPaymentToggle,
+  setBoardingPoint,
+}) => {
   const dispatch = useDispatch();
-  const handleSubmit = () => {
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({
+    name: "",
+    gender: "",
+    age: "",
+    state: "",
+    mail: "",
+    phoneNumber: "",
+  });
+  const orders = useSelector((store) => store?.BusCheckOut?.CheckOut);
+
+  const inputHandler = (e) => {
+    const values = { ...formValues, [e.target.name]: e.target.value };
+    setFormValues(values);
+  };
+
+  const inputGenderHandler = (e) => {
+    const values = { ...formValues, [e.target.name]: e.target.id };
+    setFormValues(values);
+  };
+
+  const handleSubmit = (e) => {
+    dispatch(
+      addDetails({
+        id: orders.length + 1,
+        busName: busDetails[0]?.travelName,
+        seatType: busDetails[0]?.seatType,
+        seats: busSeats,
+        boardingPoint: boardingPoint,
+        dropPoint: dropPoint,
+        username: formValues?.name,
+        gender: formValues?.gender,
+        age: formValues?.age,
+        email: formValues?.mail,
+        phone: formValues?.phoneNumber,
+      })
+    );
+    dispatch(
+      confirmedSeats({
+        seats: busSeats,
+        gender: formValues?.gender,
+      })
+    );
     dispatch(handleFormToggle());
+    navigate("/BusList/checkout");
+  };
+  const handleCancel = () => {
+    dispatch(handleFormToggle());
+    setBoardingPoint("");
+    setPaymentToggle(false);
   };
   return (
     <>
-      <div className="bg-black fixed top-0 left-0 w-screen h-screen bg-opacity-70 "></div>
-      <div className="flex flex-col bg-red-300 fixed top-0 right-0 ml-[10%] mr-0 w-[50%] h-screen ">
-        <form className="flex flex-col ml-10 gap-3">
-          <h1 className="text-xl font-semibold">Passenger Information</h1>
-          <div>
-            <h1>Full Name</h1>
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-[90%] px-2 py-1 border border-black rounded-md"
+      <div className="bg-black fixed z-20 top-0 left-0 w-screen h-screen bg-opacity-70 "></div>
+      <div className="flex flex-col bg-white fixed z-20 top-0 right-0 ml-[10%] mr-0 w-[50%] h-screen text-xs text-gray-400 overflow-y-scroll">
+        <h1 className="text-xl text-black font-semibold py-2 bg-gray-300 flex justify-center">
+          Passenger Details
+        </h1>
+        <div>
+          {busSeats.map((item, i) => (
+            <PassengerInfo
+              inputHandler={inputHandler}
+              inputGenderHandler={inputGenderHandler}
+              formValues={formValues}
+              count={i}
             />
-          </div>
-          <div className="flex ">
+          ))}
+        </div>
+
+        <form className="flex flex-col gap-3 mt-5 pl-10">
+          <h1 className="text-xl text-black font-semibold border-b-2">
+            Contact Details
+          </h1>
+          <div className="shadow-xl px-4 py-7 rounded-md border">
             <div>
-              <h1>Gender</h1>
-              <div className="flex  gap-3">
-                <div>
-                  <input type="checkbox" />
-                  <span>Male</span>
-                </div>
-                <div>
-                  <input type="checkbox" />
-                  <span>Female</span>
-                </div>
-              </div>
-            </div>
-            <div className="ml-[33%]">
-              <h1>Age</h1>
+              <h1 className="py-3">Email ID</h1>
               <input
-                type="age"
-                placeholder="Age"
-                className="px-2 py-1 border border-black rounded-md"
+                type="text"
+                name="mail"
+                placeholder="Email id"
+                className="w-[90%] px-2 py-1 border border-black rounded-md"
+                onChange={inputHandler}
+              />
+            </div>
+            <div>
+              <h1 className="py-3">Phone Number</h1>
+              <input
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                className="w-[90%] px-2 py-1 border border-black rounded-md"
+                onChange={inputHandler}
               />
             </div>
           </div>
+        </form>
 
-          <div>
-            <h1>State Of Residence</h1>
-            <input
-              type="text"
-              placeholder="state"
-              className="w-[90%] px-2 py-1 border border-black rounded-md"
-            />
-          </div>
-        </form>
-        <form className="flex flex-col gap-3 mt-5 pl-10">
-          <h1 className="text-xl font-semibold">Contact Information</h1>
-          <div>
-            <h1>Email ID</h1>
-            <input
-              type="text"
-              placeholder="Email id"
-              className="w-[90%] px-2 py-1 border border-black rounded-md"
-            />
-          </div>
-          <div>
-            <h1>Phone Number</h1>
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-[90%] px-2 py-1 border border-black rounded-md"
-            />
-          </div>
-        </form>
-        <button onClick={handleSubmit}>Submit</button>
+        <div className="flex gap-2 justify-end px-5 py-7">
+          <button
+            className="px-2 py-2 bg-green-300 w-20 text-md text-black "
+            onClick={handleCancel}
+          >
+            Cancel
+          </button>
+          <button
+            className="px-2 py-2 bg-green-300 w-20 text-md text-black "
+            onClick={(e) => handleSubmit(e)}
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </>
   );
