@@ -17,12 +17,12 @@ const BusList = () => {
   return (
     <>
       <div className="flex flex-col gap-2 pt-2 text-xs  bg-gradient-to-b from-[#F7F2F1] to-white  h-16">
-        <div className="pl-10">
+        <div className="pl-10 hidden md:flex">
           {" "}
           Home<span>{">"}</span>Bus Ticket <span>{">"}</span>
           {from.toUpperCase()} to {to.toUpperCase()}
         </div>
-        <div className="pl-10  text-lg  border-b-2 relative">
+        <div className="pl-10  text-lg  border-b-2 relative hidden md:flex">
           {from.toUpperCase()} to {to.toUpperCase()}
         </div>
       </div>
@@ -41,7 +41,7 @@ const BusList = () => {
           <Sidebar />
         </div>
         <div className="w-screen">
-          <div className="pl-5 pb-5">
+          <div className="pl-5 pb-5 hidden md:flex">
             <TrendingOffer />
           </div>
 

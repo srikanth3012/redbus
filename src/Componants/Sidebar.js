@@ -3,7 +3,7 @@ import React from "react";
 const Sidebar = () => {
   return (
     <>
-      <div className="flex flex-col gap-3 text-sm  w-52 pl-3 text-gray-700 pt-3 sticky top-14">
+      <div className=" hidden  md:flex flex-col gap-3 text-sm  w-52 pl-3 text-gray-700 pt-3 sticky top-14">
         <div className=" w-40 flex flex-col gap-1">
           <h1 className="font-semibold ml-0">FILTERS</h1>
           <hr />

@@ -19,7 +19,7 @@ function App() {
           element: <Homepage />,
         },
         {
-          path: "/BusList/:from/:to",
+          path: "/BusList/:from/:to/:date",
           element: <BusList />,
         },
         {

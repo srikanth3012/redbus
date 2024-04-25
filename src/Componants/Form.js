@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { handleFormToggle } from "../Utills/FormToggleSlicer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { addDetails, confirmedSeats } from "../Utills/BusCheckOutSlicer";
 import PassengerInfo from "./PassengerInfo";
 
@@ -15,6 +15,8 @@ const Form = ({
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { date } = useParams();
+
   const [formValues, setFormValues] = useState({
     name: "",
     gender: "",
@@ -39,16 +41,17 @@ const Form = ({
     dispatch(
       addDetails({
         id: orders.length + 1,
-        busName: busDetails[0]?.travelName,
-        seatType: busDetails[0]?.seatType,
-        seats: busSeats,
-        boardingPoint: boardingPoint,
-        dropPoint: dropPoint,
         username: formValues?.name,
         gender: formValues?.gender,
         age: formValues?.age,
         email: formValues?.mail,
         phone: formValues?.phoneNumber,
+        journeyDate: date,
+        busName: busDetails[0]?.travelName,
+        seatType: busDetails[0]?.seatType,
+        seats: busSeats,
+        boardingPoint: boardingPoint,
+        dropPoint: dropPoint,
       })
     );
     dispatch(
@@ -79,6 +82,7 @@ const Form = ({
               inputGenderHandler={inputGenderHandler}
               formValues={formValues}
               count={i}
+              key={i}
             />
           ))}
         </div>
@@ -122,7 +126,7 @@ const Form = ({
             className="px-2 py-2 bg-green-300 w-20 text-md text-black "
             onClick={(e) => handleSubmit(e)}
           >
-            Submit
+            Submit{date}
           </button>
         </div>
       </div>

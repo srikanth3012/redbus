@@ -34,7 +34,10 @@ const CheckOut = () => {
           Phone:<span>{details[0]?.phone}</span>
         </h1>
       </div>
-      <div className="flex gap-5 ml-[9%] mt-2">
+      <div className="ml-[8.5%] py-2">
+        Journey Date:{details[0]?.journeyDate}
+      </div>
+      <div className="flex gap-5 ml-[8.5%] mt-2">
         <div className="flex">
           <h1 className="text-lg w-60">
             {details[0]?.busName}
@@ -48,7 +51,7 @@ const CheckOut = () => {
           ))}
         </h1>
       </div>
-      <div className="flex mt-2 ml-[9%]">
+      <div className="flex mt-2 ml-[8.5%]">
         {" "}
         <div className="flex my-2 ">
           <h1 className="flex flex-col mr-2">

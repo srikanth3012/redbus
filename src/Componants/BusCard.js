@@ -29,7 +29,7 @@ const BusCard = ({ item }) => {
   const seats = item?.seats - Slength.length;
   return (
     <>
-      <div className="flex flex-col w-[90%] ml-[5%]  m-2 border border-gray-200">
+      <div className="flex flex-col w-[90%] ml-[5%]  m-2 border border-gray-200 rounded-xl md:rounded-none shadow-lg md:shadow-none">
         <img
           alt="Primo"
           src="https://s3.rdbuz.com/Images/webplatform/india/primo/primoLogo.svg"
@@ -48,10 +48,12 @@ const BusCard = ({ item }) => {
               <h1 className="text-xs text-gray-500">{item.startlocation}</h1>
             </div>
             <div>
-              <h1 className="text-xs mt-[30%]">{item.duration}</h1>
+              <h1 className="text-xs mt-[30%] hidden md:flex">
+                {item.duration}
+              </h1>
             </div>
             <div className="flex flex-col gap-5">
-              <h1 className="font-bold">{item.reachTime}</h1>
+              <h1 className="font-bold ">{item.reachTime}</h1>
               <h1 className="text-xs text-gray-500">{item.dropLocation}</h1>
             </div>
             <div>
@@ -63,13 +65,13 @@ const BusCard = ({ item }) => {
                 </span>
               </h1>
             </div>
-            <h1 className="text-xs text-gray-500 mt-10">
+            <h1 className="text-xs text-gray-500 mt-10 hidden md:flex">
               Available Seats :{seats}
             </h1>
           </div>
         </div>
 
-        <div className="flex gap-5 pl-2">
+        <div className=" gap-5 pl-2 hidden md:flex">
           <div className="flex gap-1 mt-5 ">
             <img
               alt="busIcon"

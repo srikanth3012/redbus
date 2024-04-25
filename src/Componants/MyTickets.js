@@ -31,9 +31,14 @@ const MyTickets = ({ SetOrders }) => {
           >
             <div className="flex gap-5 ml-[3%] ">
               <div className="flex">
-                <h1 className="text-lg w-60 ">
+                <h1 className="text-lg w-96 ">
                   {item?.busName}
                   <span className="text-sm ml-1">{item?.seatType}</span>
+                  <span className="text-xs font-semibold px-1">
+                    {"( "}
+                    {details[0]?.journeyDate}
+                    {" )"}
+                  </span>
                 </h1>
               </div>
             </div>
