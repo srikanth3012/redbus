@@ -15,8 +15,10 @@ const Form = ({
   setPaymentToggle,
   setBoardingPoint,
 }) => {
+  const [addExistUser, setAddExistUser] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const { date } = useParams();
   const Existusers = useSelector((store) => store?.ExistUser?.ExistUser);
 
@@ -63,16 +65,17 @@ const Form = ({
         gender: formValues?.gender,
       })
     );
-    dispatch(
-      addUser({
-        id: 1,
-        username: formValues?.name,
-        gender: formValues?.gender,
-        age: formValues?.age,
-        email: formValues?.mail,
-        phone: formValues?.phoneNumber,
-      })
-    );
+    !addExistUser &&
+      dispatch(
+        addUser({
+          id: 1,
+          username: formValues?.name,
+          gender: formValues?.gender,
+          age: formValues?.age,
+          email: formValues?.mail,
+          phone: formValues?.phoneNumber,
+        })
+      );
     dispatch(handleFormToggle());
     navigate("/BusList/checkout");
   };
@@ -90,7 +93,7 @@ const Form = ({
       mail: user.email,
       phoneNumber: user.phone,
     });
-    // console.log(user);
+    setAddExistUser(true);
   };
   return (
     <>
@@ -166,7 +169,7 @@ const Form = ({
             className="px-2 py-2 bg-green-300 w-20 text-md text-black "
             onClick={(e) => handleSubmit(e)}
           >
-            Submit{date}
+            Submit
           </button>
         </div>
       </div>
