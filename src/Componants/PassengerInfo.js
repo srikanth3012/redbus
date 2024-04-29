@@ -53,6 +53,7 @@ const PassengerInfo = ({
               name="age"
               type="age"
               placeholder="Age"
+              value={formValues?.age}
               className="px-2 py-1 border border-black rounded-md"
               onChange={inputHandler}
             />

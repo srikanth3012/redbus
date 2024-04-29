@@ -4,6 +4,8 @@ import { handleFormToggle } from "../Utills/FormToggleSlicer";
 import { useNavigate, useParams } from "react-router-dom";
 import { addDetails, confirmedSeats } from "../Utills/BusCheckOutSlicer";
 import PassengerInfo from "./PassengerInfo";
+import { addUser } from "../Utills/ExistingUserslicer";
+import ExistUser from "./ExistUser";
 
 const Form = ({
   boardingPoint,
@@ -16,6 +18,7 @@ const Form = ({
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { date } = useParams();
+  const Existusers = useSelector((store) => store?.ExistUser?.ExistUser);
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -60,6 +63,16 @@ const Form = ({
         gender: formValues?.gender,
       })
     );
+    dispatch(
+      addUser({
+        id: 1,
+        username: formValues?.name,
+        gender: formValues?.gender,
+        age: formValues?.age,
+        email: formValues?.mail,
+        phone: formValues?.phoneNumber,
+      })
+    );
     dispatch(handleFormToggle());
     navigate("/BusList/checkout");
   };
@@ -68,6 +81,17 @@ const Form = ({
     setBoardingPoint("");
     setPaymentToggle(false);
   };
+  const ExistUserHandler = (user) => {
+    setFormValues({
+      ...formValues,
+      name: user.username,
+      gender: user.gender,
+      age: user.age,
+      mail: user.email,
+      phoneNumber: user.phone,
+    });
+    // console.log(user);
+  };
   return (
     <>
       <div className="bg-black fixed z-20 top-0 left-0 w-screen h-screen bg-opacity-70 "></div>
@@ -75,6 +99,20 @@ const Form = ({
         <h1 className="text-xl text-black font-semibold py-2 bg-gray-300 flex justify-center">
           Passenger Details
         </h1>
+        {Existusers.length >= 1 && (
+          <div className="text-black">
+            <h1 className="flex font-semibold text-lg px-4 py-1 border-b-2">
+              Existing user
+            </h1>
+            {Existusers.map((item) => (
+              <ExistUser
+                user={item}
+                ExistUserHandler={() => ExistUserHandler(item)}
+                key={item?.name}
+              />
+            ))}
+          </div>
+        )}
         <div>
           {busSeats.map((item, i) => (
             <PassengerInfo
@@ -98,6 +136,7 @@ const Form = ({
                 type="text"
                 name="mail"
                 placeholder="Email id"
+                value={formValues?.mail}
                 className="w-[90%] px-2 py-1 border border-black rounded-md"
                 onChange={inputHandler}
               />
@@ -108,6 +147,7 @@ const Form = ({
                 type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
+                value={formValues?.phoneNumber}
                 className="w-[90%] px-2 py-1 border border-black rounded-md"
                 onChange={inputHandler}
               />
